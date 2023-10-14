@@ -1,0 +1,41 @@
+.hero {
+  @apply flex flex-col items-center pt-10 tablet:gap-[0.6875rem] laptop:items-end;
+
+  .offer {
+    @apply flex flex-col gap-4 px-container-mobile tablet:px-container-tablet laptop:px-container-desktop laptop:gap-6;
+
+    .title {
+      @apply text-title text-title-h4 tablet:text-title-h3 laptop:text-title-h1 desktop:text-[7.75rem] desktop:leading-[8.25rem];
+    }
+
+    .app {
+      @apply flex flex-col gap-6 laptop:gap-8;
+
+      .subtitle {
+        @apply text-subtitile text-subtitile-1;
+      }
+
+      .socialButtons {
+        @apply flex flex-wrap gap-2;
+
+        .socialButton {
+          @apply w-40 h-auto;
+        }
+      }
+    }
+  }
+
+  .heroImg {
+    @apply w-full h-auto tablet:px-container-tablet;
+
+    // laptop screen
+    @media screen and (min-width: 1440px) {
+      @apply relative h-[50rem] w-auto bottom-[15.25rem] px-0 right-[3.25rem];
+    }
+
+    // desktop screen
+    @media screen and (min-width: 1920px) {
+      @apply h-[59.125rem] bottom-[16rem];
+    }
+  }
+}

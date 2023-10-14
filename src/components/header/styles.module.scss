@@ -1,3 +1,3 @@
 .header {
-  @apply flex justify-between items-center p-mobile tablet:px-tablet laptop:px-desktop;
+  @apply flex justify-between items-center p-container-mobile tablet:px-container-tablet laptop:px-container-desktop;
 }

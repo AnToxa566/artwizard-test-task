@@ -35,7 +35,7 @@ const Menu = () => {
     <nav className={styles.menu}>
       {(isLaptop || isDesktop) && <MenuItems />}
 
-      <Link href={AppLink.GOOGLE_PLAY}>
+      <Link href={AppLink.GOOGLE_PLAY} target="_blank">
         <Button
           label={isMobile ? ButtonTitle.MENU_MOBILE : ButtonTitle.MENU_DESKTOP}
           hierarchy="accent"

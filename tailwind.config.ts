@@ -40,9 +40,9 @@ const config: Config = {
     },
     extend: {
       spacing: {
-        mobile: "1rem",
-        tablet: "1.5rem",
-        desktop: "5rem",
+        "container-mobile": "1rem",
+        "container-tablet": "1.5rem",
+        "container-desktop": "5rem",
       },
     },
   },
@@ -50,24 +50,38 @@ const config: Config = {
     ({ addComponents }: PluginAPI) => {
       addComponents({
         ".text": {
-          "&-label": {
+          "&-title": {
             fontFamily: "var(--display-font)",
-            fontWeight: "600",
-            letterSpacing: "0.005em",
+            fontWeight: "500",
 
-            "&-small": {
-              fontSize: "0.8125rem",
-              lineHeight: "1.25rem",
+            "&-h1": {
+              fontSize: "6rem",
+              lineHeight: "6.75rem",
             },
 
-            "&-medium": {
-              fontSize: "0.875rem",
-              lineHeight: "1.375rem",
+            "&-h2": {
+              fontSize: "3.75rem",
+              lineHeight: "4rem",
             },
 
-            "&-large": {
-              fontSize: "1rem",
-              lineHeight: "1.625rem",
+            "&-h3": {
+              fontSize: "3rem",
+              lineHeight: "3.25rem",
+            },
+
+            "&-h4": {
+              fontSize: "2rem",
+              lineHeight: "2.25rem",
+            },
+
+            "&-h5": {
+              fontSize: "1.5rem",
+              lineHeight: "1.75rem",
+            },
+
+            "&-h6": {
+              fontSize: "1.25rem",
+              lineHeight: "1.5rem",
             },
           },
           "&-subtitile": {
@@ -88,6 +102,26 @@ const config: Config = {
             "&-3": {
               fontSize: "0.875rem",
               lineHeight: "1.25rem",
+            },
+          },
+          "&-label": {
+            fontFamily: "var(--display-font)",
+            fontWeight: "600",
+            letterSpacing: "0.005em",
+
+            "&-small": {
+              fontSize: "0.8125rem",
+              lineHeight: "1.25rem",
+            },
+
+            "&-medium": {
+              fontSize: "0.875rem",
+              lineHeight: "1.375rem",
+            },
+
+            "&-large": {
+              fontSize: "1rem",
+              lineHeight: "1.625rem",
             },
           },
         },
