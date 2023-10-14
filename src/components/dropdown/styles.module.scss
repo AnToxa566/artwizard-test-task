@@ -1,0 +1,16 @@
+.dropdown {
+  @apply relative;
+
+  .dropdownItems {
+    @apply absolute flex flex-col gap-1 p-1 rounded-lg border-2 border-solid border-grey-900 bg-grey-900 shadow-drop w-[20rem] tablet:w-[25rem];
+
+    &.bottom-start,
+    &.bottom-end {
+      @apply top-full mt-2;
+    }
+
+    &.bottom-end {
+      @apply right-0;
+    }
+  }
+}

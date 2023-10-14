@@ -1,0 +1,7 @@
+.menu {
+  @apply flex items-center gap-2 tablet:gap-4;
+
+  .menuItems {
+    @apply flex;
+  }
+}

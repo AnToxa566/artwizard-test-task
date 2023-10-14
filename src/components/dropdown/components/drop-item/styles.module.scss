@@ -1,0 +1,7 @@
+.dropItem {
+  @apply text-subtitile text-subtitile-1 text-grey-white px-3 py-[0.625rem] rounded-[0.25rem] cursor-pointer hover:bg-grey-800 active:bg-grey-700;
+
+  &.disabled {
+    @apply text-grey-300 pointer-events-none;
+  }
+}

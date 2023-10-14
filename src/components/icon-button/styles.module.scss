@@ -1,0 +1,31 @@
+.iconBtn {
+  @apply flex justify-center items-center rounded-full h-fit;
+
+  .icon {
+    @apply flex justify-center items-center;
+  }
+
+  &.small {
+    @apply p-1;
+
+    .icon {
+      @apply w-4 h-4;
+    }
+  }
+
+  &.medium {
+    @apply p-2;
+
+    .icon {
+      @apply w-5 h-5;
+    }
+  }
+
+  &.large {
+    @apply p-3;
+
+    .icon {
+      @apply w-6 h-6;
+    }
+  }
+}

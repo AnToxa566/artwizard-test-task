@@ -1,0 +1,38 @@
+.primary,
+.accent,
+.outlined {
+  @apply border-2 border-solid border-grey-900 shadow-stroke-small active:shadow-none;
+}
+
+.primary {
+  @apply bg-yellow-500 hover:bg-yellow-400 fill-grey-900;
+}
+
+.accent {
+  @apply text-grey-white bg-grey-800 hover:bg-grey-500 fill-grey-white;
+}
+
+.outlined {
+  @apply bg-grey-white hover:text-grey-500 hover:border-grey-500 fill-grey-900;
+}
+
+.text-primary {
+  @apply text-yellow-500 hover:text-yellow-400 fill-yellow-500;
+}
+
+.text-black {
+  @apply text-grey-900 hover:text-grey-500 fill-grey-900;
+}
+
+.text-primary,
+.text-black {
+  @apply active:bg-grey-black active:bg-opacity-5;
+}
+
+.text-white {
+  @apply text-grey-white hover:opacity-80 active:bg-grey-white active:bg-opacity-5 fill-grey-white;
+}
+
+.disabled {
+  @apply opacity-20 pointer-events-none;
+}

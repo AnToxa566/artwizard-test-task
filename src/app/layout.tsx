@@ -7,10 +7,13 @@ import "./globals.scss";
 const unbounded = Unbounded({
   subsets: ["latin", "cyrillic"],
   weight: ["500", "600"],
+  variable: "--display-font",
 });
+
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   weight: ["500", "700"],
+  variable: "--body-font",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +24,7 @@ export const metadata: Metadata = {
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="uk">
-      <body className={`${unbounded.className} ${manrope.className}`}>
+      <body className={`${unbounded.variable} ${manrope.variable}`}>
         {children}
       </body>
     </html>

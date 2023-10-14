@@ -1,0 +1,11 @@
+.logo {
+  @apply flex items-center gap-[0.7rem] h-10 tablet:gap-4 tablet:h-[3.75rem];
+
+  .artwizardLogo {
+    @apply h-full w-auto;
+  }
+
+  .artwizardType {
+    @apply w-auto h-[0.83rem] tablet:h-5;
+  }
+}

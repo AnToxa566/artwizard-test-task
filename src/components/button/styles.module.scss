@@ -1,0 +1,31 @@
+.btn {
+  @apply flex gap-2 justify-center items-center rounded-full h-fit;
+
+  .icon {
+    @apply flex justify-center items-center;
+  }
+
+  &.small {
+    @apply text-label text-label-small px-3 py-[0.125rem];
+
+    .icon {
+      @apply w-4 h-4;
+    }
+  }
+
+  &.medium {
+    @apply text-label text-label-medium px-5 py-[0.4375rem];
+
+    .icon {
+      @apply w-5 h-5;
+    }
+  }
+
+  &.large {
+    @apply text-label text-label-large px-7 py-[0.6875rem];
+
+    .icon {
+      @apply w-6 h-6;
+    }
+  }
+}
