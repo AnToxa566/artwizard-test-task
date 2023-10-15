@@ -1,16 +1,11 @@
-import { FC } from "react";
+import styles from "./styles.module.scss";
 
-interface ButtonLoadingProps {
-  color?: string;
-}
-
-const ButtonLoading: FC<ButtonLoadingProps> = ({ color }) => {
+const ButtonLoading = () => {
   return (
     <svg
-      width="100%"
-      height="100%"
       viewBox="0 0 15 14"
       xmlns="http://www.w3.org/2000/svg"
+      className={styles.buttonLoading}
     >
       <g id="Group">
         <path
