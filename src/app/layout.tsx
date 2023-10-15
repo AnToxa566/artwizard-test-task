@@ -2,7 +2,11 @@ import { FC, PropsWithChildren } from "react";
 import type { Metadata } from "next";
 import { Unbounded, Manrope } from "next/font/google";
 
+import Header from "~/components/header/header";
+import Footer from "~/components/footer/footer";
+
 import "./globals.scss";
+import styles from "./layout.module.scss";
 
 const unbounded = Unbounded({
   subsets: ["latin", "cyrillic"],
@@ -25,7 +29,11 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="uk">
       <body className={`${unbounded.variable} ${manrope.variable}`}>
-        {children}
+        <div className={styles.layout}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

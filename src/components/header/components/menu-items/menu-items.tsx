@@ -24,10 +24,10 @@ export const cities: IDropdownOption[] = [{ label: "Львів", value: "Льв�
 
 export const navLinks: INavLink[] = [
   { label: "Місто", href: "#", dropdown: true, dropdownOptions: cities },
-  { label: "Артист", href: AppPath.HOME },
-  { label: "Для бізнесів", href: AppPath.HOME },
-  { label: "Про нас", href: AppPath.HOME },
-  { label: "Контакти", href: AppPath.HOME },
+  { label: "Артист", href: AppPath.ARTIST },
+  { label: "Для бізнесів", href: AppPath.BUSINESS },
+  { label: "Про нас", href: AppPath.ABOUT },
+  { label: "Контакти", href: AppPath.CONTACTS },
 ];
 
 const MenuItems: FC<IMenuItemsProps> = ({ className = "" }) => {

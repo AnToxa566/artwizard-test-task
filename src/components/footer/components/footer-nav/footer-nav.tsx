@@ -6,11 +6,11 @@ import FooterNavLink, {
 import styles from "./styles.module.scss";
 
 export const footerNavLinks: IFooterNavLink[] = [
-  { label: "Місто", href: AppPath.HOME },
-  { label: "Артист", href: AppPath.HOME },
-  { label: "Для бізнесів", href: AppPath.HOME },
-  { label: "Про нас", href: AppPath.HOME },
-  { label: "Контакти", href: AppPath.HOME },
+  { label: "Місто", href: AppPath.CITY },
+  { label: "Артист", href: AppPath.ARTIST },
+  { label: "Для бізнесів", href: AppPath.BUSINESS },
+  { label: "Про нас", href: AppPath.ABOUT },
+  { label: "Контакти", href: AppPath.CONTACTS },
 ];
 
 const FooterNav = () => {
