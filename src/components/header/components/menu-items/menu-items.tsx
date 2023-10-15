@@ -1,55 +1,50 @@
-import Link from "next/link";
-import { FaAngleDown } from "react-icons/fa6";
+"use client";
 
-import Button from "~/components/button/button";
+import { FC } from "react";
+
 import AppPath from "~/common/enums/app-path.enum";
-import Dropdown from "~/components/dropdown/dropdown";
+import Dropdown, { IDropdownOption } from "~/components/dropdown/dropdown";
 
 import styles from "./styles.module.scss";
+import MenuItem from "../menu-item/menu-item";
 
-interface INavLink {
+interface IMenuItemsProps {
+  className?: string;
+}
+
+export interface INavLink {
   label: string;
   href: string;
+  dropdown?: boolean;
+  dropdownOptions?: IDropdownOption[];
+  handleDropdownSelect?: (value: string) => void;
 }
 
-interface ICity {
-  label: string;
-}
+export const cities: IDropdownOption[] = [{ label: "Львів", value: "Львів" }];
 
 export const navLinks: INavLink[] = [
+  { label: "Місто", href: "#", dropdown: true, dropdownOptions: cities },
   { label: "Артист", href: AppPath.HOME },
   { label: "Для бізнесів", href: AppPath.HOME },
   { label: "Про нас", href: AppPath.HOME },
   { label: "Контакти", href: AppPath.HOME },
 ];
 
-const cities: ICity[] = [{ label: "Львів" }];
-
-const MenuItems = () => {
-  const CitySelect = () => (
-    <Button label="Місто" hierarchy="text-black" endIcon={<FaAngleDown />} />
-  );
-
-  const handleDropdownSelect = (value: string) => {
-    alert("Було обрано місто " + value);
-  };
-
+const MenuItems: FC<IMenuItemsProps> = ({ className = "" }) => {
   return (
-    <div className={styles.menuItems}>
-      <Dropdown
-        options={cities.map((city) => ({
-          label: city.label,
-          value: city.label,
-        }))}
-        trigger={<CitySelect />}
-        onSelect={handleDropdownSelect}
-      />
-
-      {navLinks.map((link) => (
-        <Link key={link.label} href={link.href}>
-          <Button label={link.label} hierarchy="text-black" />
-        </Link>
-      ))}
+    <div className={`${styles.menuItems} ${className}`}>
+      {navLinks.map((link) =>
+        link.dropdown ? (
+          <Dropdown
+            key={link.label}
+            options={link.dropdownOptions || []}
+            trigger={<MenuItem link={link} />}
+            onSelect={() => {}}
+          />
+        ) : (
+          <MenuItem key={link.label} link={link} />
+        )
+      )}
     </div>
   );
 };

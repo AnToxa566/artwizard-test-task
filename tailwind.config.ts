@@ -15,8 +15,13 @@ const config: Config = {
     colors: {
       grey: {
         white: "#FFFFFF",
+        50: "#EDEEEF",
+        100: "#C8C9CC",
+        200: "#ADAFB4",
         300: "#888B92",
+        400: "#71757d",
         500: "#4D525C",
+        600: "#464b54",
         700: "#373A41",
         800: "#2A2D33",
         900: "#202227",
@@ -102,6 +107,38 @@ const config: Config = {
             "&-3": {
               fontSize: "0.875rem",
               lineHeight: "1.25rem",
+            },
+          },
+          "&-body": {
+            fontFamily: "var(--body-font)",
+            fontWeight: "500",
+
+            "&-1": {
+              fontSize: "1.125rem",
+              lineHeight: "1.5rem",
+            },
+
+            "&-2": {
+              fontSize: "1rem",
+              lineHeight: "1.375rem",
+            },
+
+            "&-3": {
+              fontSize: "0.875rem",
+              lineHeight: "1.25rem",
+            },
+
+            "&-caption": {
+              fontSize: "0.75rem",
+              lineHeight: "1rem",
+              letterSpacing: "0.025rem",
+            },
+
+            "&-overline": {
+              fontSize: "0.75rem",
+              lineHeight: "1.5rem",
+              letterSpacing: "0.0625rem",
+              textTransform: "uppercase",
             },
           },
           "&-label": {

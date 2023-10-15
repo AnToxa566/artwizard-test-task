@@ -1,0 +1,17 @@
+.footer {
+  @apply flex flex-col gap-6 p-container-mobile border-t border-solid border-grey-50;
+  @apply tablet:p-container-tablet;
+  @apply laptop:px-container-desktop laptop:py-[1.875rem];
+
+  .menu {
+    @apply flex flex-col gap-6 tablet:flex-row tablet:justify-between tablet:items-center tablet:gap-0;
+
+    .copyright {
+      @apply text-grey-500 text-body text-body-2;
+    }
+  }
+
+  .socialButtons {
+    @apply flex flex-wrap gap-4 laptop:self-end;
+  }
+}

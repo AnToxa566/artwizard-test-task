@@ -1,5 +1,8 @@
 .hero {
-  @apply flex flex-col items-center pt-10 tablet:gap-[0.6875rem] laptop:items-end;
+  @apply relative flex flex-col items-center pt-10;
+  @apply tablet:gap-[0.6875rem];
+  @apply laptop:pb-[35.25rem];
+  @apply desktop:pb-[43.15rem];
 
   .offer {
     @apply flex flex-col gap-4 px-container-mobile tablet:px-container-tablet laptop:px-container-desktop laptop:gap-6;
@@ -26,16 +29,9 @@
   }
 
   .heroImg {
-    @apply w-full h-auto tablet:px-container-tablet;
-
-    // laptop screen
-    @media screen and (min-width: 1440px) {
-      @apply relative h-[50rem] w-auto bottom-[15.25rem] px-0 right-[3.25rem];
-    }
-
-    // desktop screen
-    @media screen and (min-width: 1920px) {
-      @apply h-[59.125rem] bottom-[16rem];
-    }
+    @apply w-full h-auto;
+    @apply tablet:px-container-tablet;
+    @apply laptop:absolute laptop:top-[9.25rem] laptop:right-[3.25rem] laptop:h-[50rem] laptop:w-auto laptop:px-0;
+    @apply desktop:top-[11rem] desktop:right-[13.56rem] desktop:h-[59.125rem];
   }
 }

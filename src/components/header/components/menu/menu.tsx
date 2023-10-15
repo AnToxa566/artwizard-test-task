@@ -17,7 +17,7 @@ import styles from "./styles.module.scss";
 const Menu = () => {
   const router = useRouter();
 
-  const { isMobile, isTablet, isLaptop, isDesktop } = useBreakpoints();
+  const { isMobile } = useBreakpoints();
 
   const handleDropdownSelect = (value: string) => {
     router.push(value);
@@ -33,7 +33,7 @@ const Menu = () => {
 
   return (
     <nav className={styles.menu}>
-      {(isLaptop || isDesktop) && <MenuItems />}
+      <MenuItems className={styles.menuItems} />
 
       <Link href={AppLink.GOOGLE_PLAY} target="_blank">
         <Button
@@ -42,17 +42,16 @@ const Menu = () => {
         />
       </Link>
 
-      {(isMobile || isTablet) && (
-        <Dropdown
-          options={navLinks.map((link) => ({
-            label: link.label,
-            value: link.href,
-          }))}
-          trigger={<DropdownTrigger />}
-          placement="bottom-end"
-          onSelect={handleDropdownSelect}
-        />
-      )}
+      <Dropdown
+        className={styles.dropdown}
+        options={navLinks.map((link) => ({
+          label: link.label,
+          value: link.href,
+        }))}
+        trigger={<DropdownTrigger />}
+        placement="bottom-end"
+        onSelect={handleDropdownSelect}
+      />
     </nav>
   );
 };

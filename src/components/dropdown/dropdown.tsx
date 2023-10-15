@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, useState } from "react";
 
 import DropItem from "./components/drop-item/drop-item";
@@ -6,16 +8,17 @@ import styles from "./styles.module.scss";
 
 type PlacementType = "bottom-start" | "bottom-end";
 
-interface IOption {
+export interface IDropdownOption {
   label: string;
   value: string;
 }
 
 interface DropdownProps {
-  options: IOption[];
+  options: IDropdownOption[];
   onSelect: (value: string) => void;
   trigger: React.ReactNode;
   placement?: PlacementType;
+  className?: string;
 }
 
 const Dropdown: FC<DropdownProps> = ({
@@ -23,6 +26,7 @@ const Dropdown: FC<DropdownProps> = ({
   onSelect,
   trigger,
   placement = "bottom-start",
+  className = "",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,7 +40,7 @@ const Dropdown: FC<DropdownProps> = ({
   };
 
   return (
-    <div className={styles.dropdown}>
+    <div className={`${styles.dropdown} ${className}`}>
       <div onClick={toggleDropdown}>{trigger}</div>
 
       {isOpen && (

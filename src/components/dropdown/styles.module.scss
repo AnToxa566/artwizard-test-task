@@ -1,5 +1,5 @@
 .dropdown {
-  @apply relative;
+  @apply relative z-50;
 
   .dropdownItems {
     @apply absolute flex flex-col gap-1 p-1 rounded-lg border-2 border-solid border-grey-900 bg-grey-900 shadow-drop w-[20rem] tablet:w-[25rem];
