@@ -1,8 +1,10 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useRef } from "react";
+import { motion } from "framer-motion";
 
 import DropItem from "./components/drop-item/drop-item";
+import useOutsideClickHandler from "~/hooks/use-outside-click-handler.hook";
 
 import styles from "./styles.module.scss";
 
@@ -30,6 +32,10 @@ const Dropdown: FC<DropdownProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useOutsideClickHandler(dropdownRef, () => setIsOpen(false));
+
   const handleSelect = (value: string) => {
     onSelect(value);
     setIsOpen(false);
@@ -39,22 +45,45 @@ const Dropdown: FC<DropdownProps> = ({
     setIsOpen(!isOpen);
   };
 
+  const dropdownVariants = {
+    open: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+    closed: {
+      opacity: 0,
+      scale: 0.95,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div className={`${styles.dropdown} ${className}`}>
       <div onClick={toggleDropdown}>{trigger}</div>
 
-      {isOpen && (
-        <div className={`${styles.dropdownItems} ${styles[placement]}`}>
-          {options.map((option) => (
-            <DropItem
-              key={option.value}
-              label={option.label}
-              value={option.value}
-              onClick={handleSelect}
-            />
-          ))}
-        </div>
-      )}
+      <motion.div
+        ref={dropdownRef}
+        className={`${styles.dropdownItems} ${styles[placement]}`}
+        variants={dropdownVariants}
+        initial="closed"
+        animate={isOpen ? "open" : "closed"}
+      >
+        {options.map((option) => (
+          <DropItem
+            key={option.value}
+            label={option.label}
+            value={option.value}
+            onClick={handleSelect}
+          />
+        ))}
+      </motion.div>
     </div>
   );
 };
