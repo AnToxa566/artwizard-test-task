@@ -68,22 +68,24 @@ const Dropdown: FC<DropdownProps> = ({
     <div className={`${styles.dropdown} ${className}`}>
       <div onClick={toggleDropdown}>{trigger}</div>
 
-      <motion.div
-        ref={dropdownRef}
-        className={`${styles.dropdownItems} ${styles[placement]}`}
-        variants={dropdownVariants}
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
-      >
-        {options.map((option) => (
-          <DropItem
-            key={option.value}
-            label={option.label}
-            value={option.value}
-            onClick={handleSelect}
-          />
-        ))}
-      </motion.div>
+      {isOpen && (
+        <motion.div
+          ref={dropdownRef}
+          className={`${styles.dropdownItems} ${styles[placement]}`}
+          variants={dropdownVariants}
+          initial="closed"
+          animate={isOpen ? "open" : "closed"}
+        >
+          {options.map((option) => (
+            <DropItem
+              key={option.value}
+              label={option.label}
+              value={option.value}
+              onClick={handleSelect}
+            />
+          ))}
+        </motion.div>
+      )}
     </div>
   );
 };
