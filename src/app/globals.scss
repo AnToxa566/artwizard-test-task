@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root { }
+*,
+*::before,
+*::after {
+  @apply box-border;
+}
 
-body { } */
+body {
+  @apply text-grey-900;
+}

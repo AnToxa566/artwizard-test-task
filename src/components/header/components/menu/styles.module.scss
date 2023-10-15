@@ -1,0 +1,11 @@
+.menu {
+  @apply flex items-center gap-2 tablet:gap-4;
+
+  .menuItems {
+    @apply hidden laptop:flex;
+  }
+
+  .dropdown {
+    @apply laptop:hidden;
+  }
+}

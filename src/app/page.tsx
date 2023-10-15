@@ -1,5 +1,7 @@
+import HeroSection from "~/components/hero-section/hero-section";
+
 const Home = () => {
-  return <main>Init commit</main>;
+  return <HeroSection />;
 };
 
 export default Home;

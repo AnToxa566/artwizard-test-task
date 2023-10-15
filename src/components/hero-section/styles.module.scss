@@ -1,0 +1,37 @@
+.hero {
+  @apply relative flex flex-col items-center pt-10;
+  @apply tablet:gap-[0.6875rem];
+  @apply laptop:pb-[35.25rem];
+  @apply desktop:pb-[43.15rem];
+
+  .offer {
+    @apply flex flex-col gap-4 px-container-mobile tablet:px-container-tablet laptop:px-container-desktop laptop:gap-6;
+
+    .title {
+      @apply text-title text-title-h4 tablet:text-title-h3 laptop:text-title-h1 desktop:text-[7.75rem] desktop:leading-[8.25rem];
+    }
+
+    .app {
+      @apply flex flex-col gap-6 laptop:gap-8;
+
+      .subtitle {
+        @apply text-subtitile text-subtitile-1;
+      }
+
+      .socialButtons {
+        @apply flex flex-wrap gap-2;
+
+        .socialButton {
+          @apply w-40 h-auto;
+        }
+      }
+    }
+  }
+
+  .heroImg {
+    @apply w-full h-auto;
+    @apply tablet:px-container-tablet;
+    @apply laptop:absolute laptop:top-[9.25rem] laptop:right-[3.25rem] laptop:h-[50rem] laptop:w-auto laptop:px-0;
+    @apply desktop:top-[11rem] desktop:right-[13.56rem] desktop:h-[59.125rem];
+  }
+}
